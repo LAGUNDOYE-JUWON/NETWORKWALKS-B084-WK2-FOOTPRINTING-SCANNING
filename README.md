@@ -149,12 +149,96 @@ See images below:
 
 ## 🎯 6. Risk Analysis / Impact
 Based on the information collected during the footprinting and network scanning activities, I identified the following potential risks.
+---
+## Risk Analysis / Impact
 
-|#	 | **Risk / Finding** |	**Evidence / Observation** |	**⚠️Potential Impact	Risk Level**|
-|---|---|---|
+Based on the information collected during the footprinting
+and network scanning activities, I identified the following
+potential risks.
 
+| No. | Risk / Finding | Evidence / Observation | Potential Impact | Risk Level |
+|-----|----------------|------------------------|------------------|------------|
+| 1 | Web technology information exposed | WhatWeb identified WordPress and WP Download Manager | Attackers may use exposed technology information to identify software requiring further security review | 🟡 Medium |
+| 2 | Server IP address identifiable | Nslookup resolved the domain to 192.233.216.135 | Provides information about the network location of the web service | 🟢 Low |
+| 3 | HTTP technical information exposed | Curl returned HTTP response headers and exposed /wp-json/ | May assist technology fingerprinting and further enumeration | 🟢 Low |
+| 4 | WAF technology identifiable | WhatWAF identified ModSecurity | Reveals information about the web application's security architecture | 🟢 Low |
+| 5| DNS infrastructure information exposed|	DNSRecon identified DNS, mail and service-related records|	DNS information can help build a broader infrastructure profile|	🟡 Medium|
+|6| Multiple live hosts visible on local network|	Zenmap identified four live hosts in the example network|	Unknown or unauthorized devices may potentially be present on a network|	🟡 Medium|
+---
 
+---
+## Risk Rating Key
 
+| Indicator | Severity |
+|---|---|
+| 🔴 | Critical|
+| 🟡 | Medium |
+| 🟢| Low|
+---
+> ⚠️ Note: The risks above are observations from the footprinting and scanning exercises, not confirmed vulnerabilities. The practical exercises primarily involved information gathering and host discovery. No exploitation or vulnerability validation was performed as part of these two modules. Therefore, the presence of information such as a software version, IP address or DNS record does not by itself mean that the system is vulnerable. Further authorized security testing would be required to confirm any actual vulnerability.
 
+## 🛡️ 7. Recommendations
+## Based on the observations from these activities, I recommend the following security improvements:
+# Review publicly exposed technology information
+Organizations should regularly review what information about their web technologies, CMS and plugins is publicly visible.
+
+## Keep software updated
+CMS platforms, plugins and other web technologies should be regularly updated and reviewed against current security advisories.
+
+## Review HTTP headers
+HTTP response headers should be reviewed to determine whether unnecessary technical information is being exposed.
+
+## Review DNS records regularly
+DNS records should be checked periodically to ensure that only required information and services are publicly exposed.
+
+## Properly configure and monitor the WAF
+Keep the WAF (ModSecurity) enabled and tuned, since it already blocks naive attacks.
+
+## Perform regular internal network discovery
+Organizations should periodically scan their own networks to identify active devices.
+
+## Investigate unknown devices
+Any unexpected device discovered during network scanning should be investigated and verified.
+
+## Maintain network documentation
+Network topology and device information should be documented and updated regularly.
+
+## Perform security testing with authorization
+All Reconnaissance and scanning should only be performed against systems and networks where appropriate authorization has been provided.
+
+---
+## 8 Security Assessment Summary
+
+| Category | Status |
+|---|---|
+| 🔎 Reconnaissance and Footprinting | ✔️ Completed|
+| 🌐 Network Discovery |  ✔️ Completed|
+|👨🏽‍💻 Host Identification | ✔️ Completed |
+|⏳ Network Topology | ✔️ Completed|
+|💥 Exploitation | ✔️ Completed|
+---
+
+## 🔚 10. Conclusion
+During Week 2 of my Cybersecurity & Ethical Hacking internship, I completed authorized educational labs covering footprinting, reconnaissance, and network scanning.
+
+Using Kali Linux tools (such as` WHOIS`, `whatweb`, `nslookup`, `wafwoof`, `dnsrecon`, ) and Zenmap, I gathered targeted domain information, analyzed network configurations, mapped topologies, and collected IP/MAC addresses.
+
+This experience emphasized that robust reconnaissance is critical for identifying vulnerabilities early, while professional reporting ensures those risks are clearly explained and effectively mitigated.
+
+---
+## 📌 Project Information
+
+| Project Details |	Information  |
+|---|---|
+| 1️⃣ Program Name | Cybersecurity Program at Networkwalks |
+| 2️⃣ Week |  02|
+|3️⃣ Project: | Authorized Penetration Testing Report|
+|4️⃣ Repository:|	GitHub|
+---
+**👤 Author**
+## Lagundoye Juwon Akeem 
+
+## LinkedIn: https://www.linkedin.com/in/lagundoye-juwon-4890b6244
+## Cybersecurity Intern | Networkwalks | Batch B084
 
 
