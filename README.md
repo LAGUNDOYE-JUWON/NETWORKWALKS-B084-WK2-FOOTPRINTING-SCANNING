@@ -97,6 +97,64 @@ I performed reconnaissance against the networkwalks.com domain using six Kali Li
 ## 4.2.1. WHOIS
 WHOIS was used to obtain publicly available domain registration information and identify the domain’s name servers. The results provided information about the domain registration and hosting infrastructure.
 >  Command used: `whois networkwalks.com`
+![](whois-scrn.png)
+
+## 4.2.2. Whatweb
+WhatWeb was used to identify and fingerprint technologies used by the website.
+> Command used: whatweb networkwalks.com
+![](whatweb-scrn.png)
+## 4.2.3 Nslookup
+Nslookup was used to resolve the targets domain name to its IP address. The provided result identified 192.232.216.135.
+
+> Command used: `nslookup` `networkwalks.com`; OR, $ `nslookup -vc` `networkwalks.com` `8.8.8.8`
+![](nslookup-scrn.png)
+
+## 4.2.4 curl
+Curl was used with the -I option to inspect the HTTP response headers. This provided additional information about the web application and exposed the WordPress REST API endpoint /wp-json/.
+> Command used:` curl -I https://networkwalks.com`
+![](curl-l.png)
+
+4.2.5 Wafwoof
+wafwoof was used to determine whether a Web Application Firewall was protecting the website. The result identified ModSecurity (SpiderLabs) Web Application Firewall.
+
+> Command used: `wafwoof` `networkwalks.com`
+![](wafw00f-scrn.png)
+
+## 4.2.6 dnsrecon
+dnsrecon was used to enumerate DNS records. The results provided information relating to name servers, mail servers, SPF/TXT records, service records and DNS software information.
+> command used: `dnsrecon -d` `networkwalks.com`
+![](dnsrecon-scrn.png)
+
+## 5. Network Scanning with Zenmap
+## 5.1. Background
+Zenmap is the official GUI version of Nmap which can be used on Windows PC. It is a security scanner software tool which is used by Cybersecurity professionals & Hackers. It is a multi-platform (Linux, Windows, Mac OS X, BSD, etc.) free and open source application which aims to make Nmap easy for beginners to use while providing advanced features for experienced Nmap users. Frequently used scans can be saved as profiles to make them easy to run repeatedly.
+
+## 5.2. Introduction and Objectives
+For this second activity, I used Zenmap to perform network discovery on my local network. This practical required me to:
+
+a). Identify my local IP address and subnet
+b). Discover live hosts
+c). Identify their IP addresses
+d). Identify their MAC addresses
+e). Generate a network topology
+
+## 5.2.1. Procedure
+The Windows ipconfig command was entered in my cmd prompt to identify my local IP address and LAN subnet.
+I then entered the subnet into Zenmap and selected Ping Scan to identify active hosts.
+
+. The example results also included two MAC addresses.
+See images below:
+![](nmap-pingscan.png)
+![](toology-nmap.png)
+
+## 🎯 6. Risk Analysis / Impact
+Based on the information collected during the footprinting and network scanning activities, I identified the following potential risks.
+
+|#	 | **Risk / Finding** |	**Evidence / Observation** |	**⚠️Potential Impact	Risk Level**|
+|---|---|---|
+
+
+
 
 
 
